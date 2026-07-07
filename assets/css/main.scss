@@ -7,11 +7,16 @@ search: false
 
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
-a,
-a:visited,
-a:hover,
-a:active {
-  color: inherit !important;
+
+/* Prevent blue links only in the main page content */
+.page__content a:not(.btn),
+.page__content a:not(.btn):visited,
+.page__content a:not(.btn):active {
+  color: inherit;
+}
+
+.page__content a:not(.btn):hover {
+  color: inherit;
   text-decoration: underline;
 }
 .tag-post-grid {
