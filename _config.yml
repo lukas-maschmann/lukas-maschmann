@@ -118,7 +118,7 @@ author:
   avatar           : "/assets/images/LukasMaschmann2.jpg"
   bio              : "Ph.D. Candidate"
   location         : "Lund University"
-  email            :
+  email            : "lukas.maschmann@nek.lu.se"
   # fediverse      : "@you@instance.social"  # used for fediverse:creator meta tag
   links:
     - label: "Email"
