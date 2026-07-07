@@ -16,7 +16,19 @@ classes: wide
   {% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true" %}
 
   {% for post in visible_posts %}
+    {% assign teaser = post.header.teaser %}
+
     <div class="tag-post-card">
+      {% if teaser %}
+        <a class="tag-post-image-link" href="{{ post.url | relative_url }}">
+          <img
+            class="tag-post-teaser"
+            src="{{ teaser | relative_url }}"
+            alt="{{ post.title | escape }}"
+          >
+        </a>
+      {% endif %}
+
       <a class="tag-post-main-link" href="{{ post.url | relative_url }}">
         <h3>{{ post.title }}</h3>
       </a>
