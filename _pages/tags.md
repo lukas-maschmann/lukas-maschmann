@@ -67,17 +67,28 @@ classes: wide
     <h2>{{ tag_name }}</h2>
     <div class="tag-post-grid">
       {% for post in posts %}
-        <a class="tag-post-card" href="{{ post.url | relative_url }}">
-          <h3>{{ post.title }}</h3>
+        <div class="tag-post-card">
+          <a class="tag-post-main-link" href="{{ post.url | relative_url }}">
+            <h3>{{ post.title }}</h3>
+          </a>
           {% if post.date %}
             <time datetime="{{ post.date | date_to_xmlschema }}">
               {{ post.date | date: "%B %-d, %Y" }}
             </time>
           {% endif %}
+          {% if post.tags %}
+            <div class="post-tags">
+              {% for tag in post.tags %}
+                <a class="post-tag" href="{{ '/tags/#' | append: tag | slugify | relative_url }}">
+                  {{ tag }}
+                </a>
+              {% endfor %}
+            </div>
+          {% endif %}
           {% if post.excerpt %}
             <p>{{ post.excerpt | markdownify | strip_html | truncate: 130 }}</p>
           {% endif %}
-        </a>
+        </div>
       {% endfor %}
     </div>
   </section>
