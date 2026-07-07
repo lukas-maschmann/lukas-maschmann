@@ -78,3 +78,14 @@ search: false
 .page__footer-follow .social-icons li:first-child {
   display: none;
 }
+/* Keep social share button text/icons in their natural button color */
+.page__share a,
+.page__share a:visited,
+.page__share a:active,
+.page__share a:hover,
+.page__share .btn,
+.page__share .btn:visited,
+.page__share .btn:active,
+.page__share .btn:hover {
+  color: #fff !important;
+}
