@@ -1,4 +1,25 @@
 ---
-layout: home
+layout: single
+title: About
+permalink: /
 author_profile: true
+classes: wide
 ---
+
+Your about text goes here.
+
+<h2>Latest Posts</h2>
+
+<div class="grid__wrapper">
+  {% assign visible_posts = site.posts | where_exp: "post", "post.hidden != true" %}
+
+  {% for post in visible_posts limit:6 %}
+    {% include archive-single.html type="grid" %}
+  {% endfor %}
+</div>
+
+<p>
+  <a href="{{ '/posts/' | relative_url }}" class="btn btn--primary">
+    View all posts
+  </a>
+</p>
