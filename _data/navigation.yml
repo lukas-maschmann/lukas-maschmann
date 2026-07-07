@@ -8,8 +8,7 @@ main:
     url: /cv/
   - title: "Posts"
     url: /posts/
-  - title: "Categories"
-    url: /categories/test/
+
   # - title: "About"
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
