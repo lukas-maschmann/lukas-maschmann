@@ -19,46 +19,55 @@ classes: wide
     margin-top: 0;
   }
 
-  /* Publication blocks */
-  .publication {
+  /* Space between separate publication items */
+  .page__content .publication {
     margin-bottom: 1.75rem;
   }
 
-  .publication-title,
-  .publication-authors,
-  .publication-journal {
-    margin: 0;
+  /* Remove spacing inside each publication item */
+  .page__content .publication p,
+  .page__content .publication .publication-title,
+  .page__content .publication .publication-authors,
+  .page__content .publication .publication-journal {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
     line-height: 1.35;
   }
 
-  .publication-title a,
-  .publication-title a:visited,
-  .publication-title a:hover,
-  .publication-title a:active {
+  .page__content .publication-title a,
+  .page__content .publication-title a:visited,
+  .page__content .publication-title a:hover,
+  .page__content .publication-title a:active {
     color: inherit !important;
     text-decoration: underline;
   }
 
-  .publication-journal {
+  .page__content .publication-journal {
     font-style: italic;
   }
 
-  .abstract {
-    margin-top: 0.15rem;
+  /* Abstract directly below journal line */
+  .page__content .publication .abstract {
+    margin-top: 0.1rem !important;
+    margin-bottom: 0 !important;
   }
 
-  .abstract summary {
+  .page__content .publication .abstract summary {
     cursor: pointer;
     color: inherit;
     text-decoration: underline;
     display: inline-block;
+    line-height: 1.35;
   }
 
-  .abstract p {
-    margin: 0.25rem 0 0 0;
+  .page__content .publication .abstract p {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0 !important;
     font-size: 0.85em;
     line-height: 1.45;
   }
+
+  
 </style>
 
 <section id="publications">
