@@ -38,6 +38,20 @@ classes: wide
     border-color: #999;
   }
 
+  .tag-post-image-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .tag-post-teaser {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+  }
+
   .tag-post-card h3 {
     margin-top: 0;
     margin-bottom: 0.4rem;
@@ -67,7 +81,17 @@ classes: wide
     <h2>{{ tag_name }}</h2>
     <div class="tag-post-grid">
       {% for post in posts %}
+        {% assign teaser = post.header.teaser %}
         <div class="tag-post-card">
+          {% if teaser %}
+            <a class="tag-post-image-link" href="{{ post.url | relative_url }}">
+              <img
+                class="tag-post-teaser"
+                src="{{ teaser | relative_url }}"
+                alt="{{ post.title | escape }}"
+              >
+            </a>
+          {% endif %}
           <a class="tag-post-main-link" href="{{ post.url | relative_url }}">
             <h3>{{ post.title }}</h3>
           </a>
